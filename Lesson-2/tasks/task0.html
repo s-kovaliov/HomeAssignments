@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 0</h1>
+
+	<p>Обчислити значення виразів</p>
+			<ol>
+				<li>S1=a+12+b</li>
+				<li>S2=a+b2a </li>
+				<li>S3=3(a+b)c</li>
+				<li>S4=sin⁡(a-b) </li>
+			</ol>
+
+	<script>
+		let a = parseInt(prompt('Введіть число A', 5));
+		let b = parseInt(prompt('Введіть число B', 5));
+		let c = parseInt(prompt('Введіть число C', 4));
+
+		let s1 = a + 12 + b;
+		document.write(`<p>Sum 1 = ${s1}</p>`);
+
+		let s2 = Math.sqrt((a + b) / (a * 2));
+		document.write(`<p>Sum 2 = ${s2}</p>`);
+
+		let s3 = Math.cbrt((a + b) * c);
+		document.write(`<p>Sum 3 = ${s3}</p>`);
+
+		let s4 = Math.sin(a / (-b));
+		document.write(`<p>Sum 4 = ${s4}</p>`);
+	</script>
+</body>
+</html>
