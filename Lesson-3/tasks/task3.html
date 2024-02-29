@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 3</h1>
+
+	<p>Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.</p>
+
+	<script>
+		let min = 1, max = 5;
+		let randomNumber = min + Math.floor(Math.random()*(max-min+1));
+		let result;
+		console.log(randomNumber);
+		let userNumber = parseInt(prompt('Введіть число від 1 до 5'));
+		if (userNumber < 1 || userNumber > 5) 
+			result = 'Неправильне число';
+		else if (userNumber === randomNumber) 
+			result = 'Ви вгадали';
+		else {
+			userNumber = parseInt(prompt('Ви не вгадали. Введіть інше число'));
+			if (userNumber < 1 || userNumber > 5) 
+				result = 'Неправильне число';
+			else if (userNumber === randomNumber) 
+				result = 'Ви вгадали';
+			else result = 'Ви не вгадали';
+		};
+		document.write(result);
+	</script>
+</body>
+</html>
