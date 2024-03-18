@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 10</h1>
+
+	<p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.</p>
+
+	<script>
+		function getPlusQuantity(temperature1, temperature2, temperature3) {
+			let plusQuantity = 0
+			let sumPlusQuantity = 0
+			let average = 0
+			for (let i = 0; i < arguments.length; i++) {
+				if (arguments[i] > 0) {
+					sumPlusQuantity += arguments[i]
+					plusQuantity++
+				}
+			}
+			average = sumPlusQuantity / plusQuantity
+
+			return average
+		}
+		let temperature1 = parseFloat(prompt('Введіть температуру за перший день'))
+		let temperature2 = parseFloat(prompt('Введіть температуру за другий день'))
+		let temperature3 = parseFloat(prompt('Введіть температуру за третій день'))
+		let average = getPlusQuantity(temperature1, temperature2, temperature3)
+		document.write(`середнє значення для додатних показів температури = ${average}`)
+	</script>
+</body>
+</html>

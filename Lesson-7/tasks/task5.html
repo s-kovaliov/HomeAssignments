@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 5</h1>
+
+	<p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.</p>
+
+	<script>
+
+		function getInch(centimeters) {
+			let centimetersToInch = centimeters / 2.54
+			return centimetersToInch
+		}
+		function getPounds(kilograms) {
+			let kilogramsToPounds = kilograms * 2.205
+			return kilogramsToPounds
+		}
+		function getMiles(kilometers) {
+			let kilometersToMiles = kilometers / 1.609
+			return kilometersToMiles
+		}
+
+		let centimeters = parseFloat(prompt('Введіть сантиметри'))
+		let kilograms = parseFloat(prompt('Введіть кілограми'))
+		let kilometers = parseFloat(prompt('Введіть кілометри'))
+
+		let centimetersToInch = getInch(centimeters)
+		document.write(`Кількість сантиметрів = ${centimetersToInch.toFixed(2)}</br>`)
+		let kilogramsToPounds = getPounds(kilograms)
+		document.write(`Кількість Фунтів = ${kilogramsToPounds.toFixed(2)}</br>`)
+		let kilometersToMiles = getMiles(kilometers)
+		document.write(`Кількість Фунтів = ${kilometersToMiles.toFixed(2)}</br>`)
+	</script>
+</body>
+</html>

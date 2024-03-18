@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 8</h1>
+
+	<p>Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a:</p>
+
+	<script>
+
+		function getBanner(image, title, link) {
+			document.write(`<h1>${title}</h1>`)
+			document.write(`<a href="${link}"><img src="../img/${image}"></a>`)
+		}
+
+		let image = '1.jpg'
+		let title = 'Title 1'
+		let link = 'https://github.com/'
+
+		getBanner(image, title, link)
+	</script>
+</body>
+</html>
