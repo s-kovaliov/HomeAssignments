@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 2</h1>
+
+	<p>Побудувати ялинку</p>
+
+	<script>
+		for (let i = 0; i < 3; i++) {
+			for (let y = 0; y < 5; y++) {
+				let row = 'O'
+				for (let x = 0; x < y; x++) {
+					row += 'O'
+				}
+				document.write(row + `</br>`)
+			}
+		}
+	</script>
+</body>
+</html>

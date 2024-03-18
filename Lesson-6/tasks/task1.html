@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+
+	<p>З клавіатури вводитяться числа поки не буде введено 0. Знайти суму чисел.</p>
+
+	<script>
+		let sum = 0;
+		while (true) {
+			let userNum = parseInt(prompt('Введіть число'));
+			if (userNum == 0) break
+			sum += userNum;
+		}
+		document.write(`Сума всіх чисел = ${sum}`)
+	</script>
+</body>
+</html>
