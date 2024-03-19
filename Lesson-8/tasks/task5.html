@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 5</h1>
+
+	<p>Дано послідовність оцінок учня. Підрахувати кількість: двійок; кількість хороших оцінок (добре, відмінно); кількість оцінок, які нижче середнього.</p>
+
+	<script>
+		function get2Score(studentScore) {
+			let c = 0
+			for (let i = 0; i < studentScore.length; i++) {
+				if (studentScore[i] === 2) c++
+			}
+			return c
+		}
+
+		function getGoodScore(studentScore) {
+			let cNormal = 0
+			let cGood = 0
+			for (let i = 0; i < studentScore.length; i++) {
+				if (studentScore[i] === 4) cNormal++
+				if (studentScore[i] === 5) cGood++
+			}
+			return cNormal + cGood
+		}
+
+		function getScoreLessThanAverage(studentScore) {
+			let c = 0
+			let sum = 0
+			for (let i = 0; i < studentScore.length; i++) {
+				sum += studentScore[i]
+			}
+			let scoreAverage = sum / studentScore.length
+			for (let i = 0; i < studentScore.length; i++) {
+				if (studentScore[i] < scoreAverage) c++
+			}
+			return c
+		}
+
+		let studentScore = [5,4,2,5,4,3,5,2,4,3]
+		let negotiveScore = get2Score(studentScore)
+		let goodScore = getGoodScore(studentScore)
+		let scoreLessThanAverage = getScoreLessThanAverage(studentScore)
+
+		document.write(`
+			номери в масиві: ${studentScore}<br>
+			кількість двійок: ${negotiveScore}<br>
+			кількість хороших оцінок (добре, відмінно): ${goodScore}<br>
+			кількість оцінок, які нижче середнього: ${scoreLessThanAverage}<br>
+		`)
+	</script>
+</body>
+</html>

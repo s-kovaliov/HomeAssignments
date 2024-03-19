@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 4</h1>
+
+	<p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які : починаються на букву «А»; перша і остання літери співпадають; складаються з більше ніш 5 символів</p>
+
+	<script>
+		function getFirstLetterA(carPlate) {
+			let c = 0
+			for (let i = 0; i < carPlate.length; i++) {
+				if (carPlate[i][0].toLowerCase() === 'a') c++
+			}
+			return c
+		}
+
+		function getFirstAndLastLetterSimilar(carPlate) {
+			let c = 0
+			for (let i = 0; i < carPlate.length; i++) {
+				if (carPlate[i].charAt(0) === carPlate[i].charAt(carPlate[i].length - 1)) c++
+			}
+			return c
+		}
+
+		function getMoreThan5Simbols(carPlate) {
+			let c = 0
+			for (let i = 0; i < carPlate.length; i++) {
+				if (carPlate[i].length > 5) c++
+			}
+			return c
+		}
+
+		let carPlate = ['Z345J','A4684A','J3468E','H568H','F4566F']
+		let firstLetterA = getFirstLetterA(carPlate)
+		let firstAndLastLetterSimilar = getFirstAndLastLetterSimilar(carPlate)
+		let moreThan5Simbols = getMoreThan5Simbols(carPlate)
+
+		document.write(`
+			номери в масиві: ${carPlate}<br>
+			починаються на букву «А»: ${firstLetterA}<br>
+			перша і остання літери співпадають: ${firstAndLastLetterSimilar}<br>
+			складаються з більше ніш 5 символів: ${moreThan5Simbols}<br>
+		`)
+	</script>
+</body>
+</html>
