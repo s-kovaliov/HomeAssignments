@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 10</h1>
+
+	<p>Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.</p>
+
+	<script>
+		let uahPrice = [2000,5457,86,365,5477,2445,256,654,4533,1765]
+		document.write(`Початковий масив: ${uahPrice}<br>`)
+		let totalTax = [...uahPrice]
+		totalTax.forEach((element, index, arr) => {
+			arr[index] = arr[index] * 0.2
+		})
+		document.write(`Готовий масив: ${totalTax}<br>`)
+	</script>
+</body>
+</html>
