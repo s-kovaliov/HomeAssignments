@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+
+	<p>Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)</p>
+
+	<script>
+		function randomArr(userQuantity) {
+			let arr = []
+			for (let i = 0; i < userQuantity; i++) {
+				let num = 1 + Math.floor(Math.random() * 10000)
+				arr.push(num)
+			}
+			return arr
+		}
+
+
+		let userQuantity = 10
+		let historyPrice = randomArr(userQuantity)
+		document.write(`Початковий масив: ${historyPrice}<br><hr>`)
+
+
+		document.write('1) Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.<br>')
+		let moreThan1000Uah = historyPrice.filter((price) => price > 1000)
+		document.write(`Результат: ${moreThan1000Uah}<br><hr>`)
+
+
+		document.write('2) Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.<br>')
+		let moreThan1000UahIndex = historyPrice.reduce((prevArr, price, i) => 
+			price > 1000 ? [...prevArr, i] : prevArr,
+			[]
+		)
+		document.write(`Результат: ${moreThan1000UahIndex}<br><hr>`)
+
+
+		document.write('3)Сформувати список з тих цін, які більші за попереднє значення.<br>')
+		let moreThanPrevious = historyPrice.filter((price, i, arr) => 
+			(price !== 0 && price > arr[i-1])
+		)
+		document.write(`Результат: ${moreThanPrevious}<br><hr>`)
+
+
+		document.write('4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального<br>')
+		let maxPrice = historyPrice.reduce((prevPrice, price, i, arr) => (price > prevPrice) ? price : prevPrice)
+		let percentFromMaxPrice = historyPrice.map(price => 
+			Math.round(price * 100 / maxPrice)
+		)
+		document.write(`Результат: ${percentFromMaxPrice}<br><hr>`)
+
+
+		document.write('5)Підрахувати кількість змін цін<br>')
+		let priceChangeQuantity = historyPrice.reduce((prevPrice, price, i, arr) =>
+			i !== 0 && price !== arr[i-1] ? prevPrice + 1 : prevPrice,
+			0
+		)
+		document.write(`Результат: ${priceChangeQuantity}<br><hr>`)
+
+
+		document.write('6)Визначити, чи є ціна, що менше 1000<br>')
+		let priceLessThan1000 = historyPrice.find(price => price < 1000)
+		if (priceLessThan1000) {
+			document.write(`Результат: Є<br><hr>`)
+		} else document.write(`Результат: Немає<br><hr>`)
+
+
+		document.write('7)Визначати, чи усі ціни більше за 1000<br>')
+		let allPriceMoreThan1000 = historyPrice.every(price => price > 1000)
+		if (allPriceMoreThan1000) {
+			document.write(`Результат: усі ціни більше за 1000<br><hr>`)
+		} else document.write(`Результат: не усі ціни більше за 1000<br><hr>`)
+
+		document.write('8)Підрахувати кількість цін, що більше за 1000<br>')
+		let priceMoreThan1000Quantity = historyPrice.filter(price => price > 1000)
+		document.write(`Результат: ${priceMoreThan1000Quantity.length}<br><hr>`)
+
+
+		document.write('9)Підрахувати суму цін, що більше за 1000<br>')
+		let sumPriceMoreThan1000 = historyPrice.reduce((prevPrice, price, i, arr) =>
+			price > 1000 ? prevPrice += price : prevPrice,
+			0
+		)
+		document.write(`Результат: ${sumPriceMoreThan1000}<br><hr>`)
+
+
+		document.write('10)Знайти першу ціну, що більше за 1000<br>')
+		let firstPriceMoreThan1000 = historyPrice.find(price => price > 1000)
+		document.write(`Результат: ${firstPriceMoreThan1000}<br><hr>`)
+
+
+		document.write('11)Знайти індекс першої ціни, що більше за 1000<br>')
+		let firstPriceIndexMoreThan1000 = historyPrice.findIndex(price => price > 1000)
+		document.write(`Результат: ${firstPriceIndexMoreThan1000}<br><hr>`)
+
+
+		document.write('12)Знайти останню ціну, що більше за 1000<br>')
+		let lastPriceMoreThan1000 = historyPrice.findLast(price => price > 1000)
+		document.write(`Результат: ${lastPriceMoreThan1000}<br><hr>`)
+
+
+		document.write('13)Знайти індекс останньої ціни, що більше за 1000<br>')
+		let lastPriceIndexMoreThan1000 = historyPrice.findLastIndex(price => price > 1000)
+		document.write(`Результат: ${lastPriceIndexMoreThan1000}<br><hr>`)
+	</script>
+</body>
+</html>
